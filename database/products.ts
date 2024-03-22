@@ -808,3 +808,9 @@ export const initialData: SeedData = {
     ]
 }
 export const getProductsSize = () => initialData.products.length
+
+export const getImages = async ({slug}:{slug? : String}) =>{
+    const result = initialData.products.find(value => value.slug === slug)
+    
+    return result ? result : null
+}

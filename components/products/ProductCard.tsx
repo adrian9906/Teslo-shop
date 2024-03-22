@@ -9,7 +9,7 @@ import {Image} from "@nextui-org/image"
 export function ProductCard({ product}:{ product: IProduct }){
     const [isHovered, setIsHovered] = useState(false)
 
-    const productImage=useMemo(() =>{
+    const productImage = useMemo(() =>{
         return isHovered 
         ? `products/${product.images[0]}`
         : `products/${product.images[1]}`

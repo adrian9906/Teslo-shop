@@ -38,7 +38,7 @@ export default function RootLayout({
           fontSans.variable,
           fontHeading.variable
         )}>
-          <div className="rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]">
+        <div className="rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]">
         <ThemeProvider>
         {children}
         </ThemeProvider>
