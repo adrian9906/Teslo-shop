@@ -30,20 +30,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  
+
   return (
     <html lang="en" className="dark">
       <body className={cn(
-          'relative h-full w-full bg-slate-950',
-          fontSans.variable,
-          fontHeading.variable
-        )}>
+        'relative h-full w-full bg-slate-950',
+        fontSans.variable,
+        fontHeading.variable
+      )}>
         <div className="rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,0,182,.15),rgba(255,255,255,0))]">
-        <ThemeProvider>
-        {children}
-        </ThemeProvider>
-    </div>
-    
+          <ThemeProvider>
+            {children}
+          </ThemeProvider>
+        </div>
+
       </body>
     </html>
   );

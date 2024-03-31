@@ -19,7 +19,7 @@ export default async function ProductIdPage({ params }: { params: { slug?: strin
     }
     return (
         <div className="grid grid-cols-2">
-            <div>
+            <div className="flex-auto p-6">
                 <ProductSlides slug={slug} images={data?.images} />
             </div>
             <div className="flex-auto p-6">
@@ -29,60 +29,42 @@ export default async function ProductIdPage({ params }: { params: { slug?: strin
                     </h1>
                     <div className="text-lg font-semibold text-slate-500">
                         <strong>
-                        $110.00
+                            $110.00
                         </strong>
                     </div>
                     <div className="w-full flex-none text-lg font-medium  mt-4">
                         Stock: <strong>{data.inStock}</strong>
                     </div>
-                    
+
                     <div className="w-full flex-none text-sm font-medium mt-2">
-                    <span>
-                    Cantidad: 
-                    </span>
+                        <span>
+                            Cantidad:
+                        </span>
                     </div>
                     <div className="w-full flex-none text-sm font-medium mt-2">
-                    <ItemCounter stock={data.inStock}/>
+                        <ItemCounter stock={data.inStock} />
                     </div>
                     <div className="w-full flex-none text-sm font-medium mt-2">
-                    <span>
-                    Tallas disponibles: 
-                    </span>
+                        <span>
+                            Tallas disponibles:
+                        </span>
                     </div>
                     <div className="flex items-baseline mt-4 mb-6 pb-6">
-                    <SizeSelector sizes={data.sizes}/>
+                        <SizeSelector sizes={data.sizes} />
                     </div>
                     <div className="w-full flex-none text-sm font-medium mt-0">
-                    <span>
-                    Descripcion: {" "}
-                    <p className="text-justify font-medium">
-                        {data.description}
-                        </p> 
-                    </span>
+                        <span>
+                            Descripcion: {" "}
+                            <p className="text-justify font-medium">
+                                {data.description}
+                            </p>
+                        </span>
                     </div>
                     <div className="w-full mt-2 flex-none">
-                        <ShopButton stocks={0}/>
+                        <ShopButton stocks={data.inStock} />
                     </div>
                 </div>
             </div>
-            {/* <div className="justify-center items-center sm:w-1/2">
-            <h1 className="justify-center items-center text-center font-heading text-xl sm:text-2xl md:text-3xl lg:text-3xl">
-              {data.title}
-            </h1>
-            <span>
-               <strong>
-                {data.price}$
-                </strong> 
-            </span>
-            <span>
-                Stock:<strong> {data.inStock}</strong>
-            </span>
-            <ItemCounter/>
-            <div className="flex items-baseline mt-4 mb-6 pb-6 space-x-2">
-
-            <SizeSelector sizes={data.sizes}/>
-            </div>
-            </div> */}
         </div>
     )
 

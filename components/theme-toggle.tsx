@@ -7,54 +7,54 @@ import { useEffect, useState } from "react"
 
 export function ThemeToggle() {
 
-    const [mounted, setMounted] = useState(false)
-    const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
 
-    useEffect(() => {
-        setMounted(true)
-    }, [])
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
-    if (!mounted) return null
+  if (!mounted) return null
 
-    return (
-        <Dropdown >
-          <NavbarItem>
-            <DropdownTrigger>
-              <Button
-                disableRipple
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent"
-                radius="sm"
-                variant="light"
-                endContent={<ArrowDown height={'20px'}/>}
-              >
-                Tema
-              </Button>
-            </DropdownTrigger>
-          </NavbarItem>
-          <DropdownMenu
-            aria-label="Products features"
-            className="w-full"
-            itemClasses={{
-              base: "gap-4",
-            }}
+  return (
+    <Dropdown >
+      <NavbarItem>
+        <DropdownTrigger>
+          <Button
+            disableRipple
+            className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+            radius="sm"
+            variant="light"
+            endContent={<ArrowDown height={'20px'} />}
           >
-            <DropdownItem
-              key="ligth"
-              endContent ={<SunIcon/>}
-              onClick={() => setTheme('light')}
-            >
-              Claro 
-            </DropdownItem>
-            <DropdownItem
-              key="dark"
-              endContent={<MoonIcon/>}
-              onClick={() => setTheme('dark')}
-            >
-              Oscuro
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-    )
+            Tema
+          </Button>
+        </DropdownTrigger>
+      </NavbarItem>
+      <DropdownMenu
+        aria-label="Products features"
+        className="w-full"
+        itemClasses={{
+          base: "gap-4",
+        }}
+      >
+        <DropdownItem
+          key="ligth"
+          endContent={<SunIcon />}
+          onClick={() => setTheme('light')}
+        >
+          Claro
+        </DropdownItem>
+        <DropdownItem
+          key="dark"
+          endContent={<MoonIcon />}
+          onClick={() => setTheme('dark')}
+        >
+          Oscuro
+        </DropdownItem>
+      </DropdownMenu>
+    </Dropdown>
+  )
 
 }
 

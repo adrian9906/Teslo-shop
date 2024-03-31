@@ -9,12 +9,12 @@ export default async function FrontPageLayout({
 }: FrontPageLayoutProps) {
   return (
     <>
-    <div >
-          <MainNavbar/>
-          {/* <nav> */}
-            {/* <ThemeToggle /> */}
-          {/* </nav> */}
-        </div>
+      <div >
+        <MainNavbar />
+        {/* <nav> */}
+        {/* <ThemeToggle /> */}
+        {/* </nav> */}
+      </div>
       <main className='flex-1'>{children}</main>
     </>
   )

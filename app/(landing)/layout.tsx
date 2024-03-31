@@ -9,14 +9,14 @@ export default async function FrontPageLayout({
   children
 }: FrontPageLayoutProps) {
   return (
-      <>
+    <>
       <div className="flex gap-6 md:gap-10">
-      <LandigNavbar />
-      {/* <nav> */}
-      {/* <ThemeToggle /> */}
-      {/* </nav> */}
-    </div>
-    <main className='flex-1'>{children}</main>
+        <LandigNavbar />
+        {/* <nav> */}
+        {/* <ThemeToggle /> */}
+        {/* </nav> */}
+      </div>
+      <main className='flex-1'>{children}</main>
     </>
   )
 }

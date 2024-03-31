@@ -1,9 +1,13 @@
-import { ProductList } from "@/components/products/ProductsList";
-import { CardSkeletonList } from "@/components/ui/skeleton";
-import { initialData } from "@/database/products";
 import { Suspense } from "react";
 
-export default function ProductPage() {
+import { getGenderImages } from "@/database/products";
+
+import { ProductList } from "@/components/products/ProductsList";
+import { CardSkeletonList } from "@/components/ui/skeleton";
+
+
+export default function ProductKidsPage() {
+    const genderImages =  getGenderImages ('kid') 
   return (
     <div>
       <section id='features'>
@@ -16,7 +20,7 @@ export default function ProductPage() {
         </div>
       </section>
       <Suspense fallback={<CardSkeletonList />}>
-        <ProductList products={initialData.products as any} />
+        <ProductList products={genderImages as any} />
       </Suspense>
     </div>
   );
