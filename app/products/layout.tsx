@@ -9,7 +9,7 @@ export default async function FrontPageLayout({
 }: FrontPageLayoutProps) {
   return (
     <>
-      <div >
+      <div>
         <MainNavbar />
         {/* <nav> */}
         {/* <ThemeToggle /> */}

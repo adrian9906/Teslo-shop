@@ -7,6 +7,7 @@ import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-o
 import { ArrowDown, MoonIcon, SearchIcon, ShoppingCartIcon, SunIcon } from "lucide-react";
 import { ThemeToggle } from "../theme-toggle";
 import { Avatar, Input } from "@nextui-org/react";
+import { TeslaIcon } from "../icons/TeslaIcon";
 
 export default function MainNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,18 +26,22 @@ export default function MainNavbar() {
     }
   ];
   return (
+    <div className="w-full max-w-full h-full max-h-full">
     <Navbar
       shouldHideOnScroll
       isBordered
       isMenuOpen={isMenuOpen}
-      onMenuOpenChange={setIsMenuOpen}>
-      <NavbarContent>
+      onMenuOpenChange={setIsMenuOpen}
+      className="justify-between w-full h-full">
+      <NavbarContent className="w-full">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <NavbarBrand>
-          Locol
+        <NavbarBrand className="justify-start">
+          <Link href="/" className="rounded-md">
+          <TeslaIcon/>
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
@@ -55,15 +60,7 @@ export default function MainNavbar() {
           <p>Niños</p>
         </Link>
       </NavbarContent>
-      <NavbarContent className="sm:flex" justify="end">
-        <Button
-          as={Link}
-          href="/product/cart"
-          isIconOnly
-          size='sm'
-          color="success">
-          <ShoppingCartIcon />
-        </Button>
+      <NavbarContent className="w-full sm:flex" justify="end">
         <Input
           isClearable
           type="text"
@@ -73,30 +70,6 @@ export default function MainNavbar() {
           onClear={() => console.log("input cleared")}
           className="max-w-xs"
         />
-        <Dropdown placement="bottom-end">
-          <DropdownTrigger>
-            <Avatar
-              isBordered
-              as="button"
-              className="transition-transform"
-              color="secondary"
-              name="Jason Hughes"
-              size="sm"
-              src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-            />
-          </DropdownTrigger>
-          <DropdownMenu aria-label="Profile Actions" variant="flat">
-            <DropdownItem key="profile" className="h-14 gap-2">
-              <p className="font-semibold">Signed in as</p>
-              <p className="font-semibold">zoey@example.com</p>
-            </DropdownItem>
-            <DropdownItem key="team_settings">Team Settings</DropdownItem>
-            <DropdownItem key="analytics">Analytics</DropdownItem>
-            <DropdownItem key="logout" color="danger">
-              Log Out
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
       </NavbarContent>
       <NavbarMenu>
         {menuItemsHidden.map((item, index) => (
@@ -115,5 +88,6 @@ export default function MainNavbar() {
         ))}
       </NavbarMenu>
     </Navbar>
+    </div>
   );
 }
